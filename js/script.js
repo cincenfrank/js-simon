@@ -24,7 +24,13 @@ When you are ready, click OK. I will wait 30 seconds and ask you to repeat the a
           return accumulator;
         }, []);
       let correctArray = checkScore(userSaidArray, numbersList);
-      alert(`You scored ${correctArray.length}/${numbersList.length}`);
+      let message = `You scored ${correctArray.length}/${numbersList.length}`;
+      if (correctArray.length > 0) {
+        message = `${message}
+You remembered the following numbers:
+${correctArray.toString()}`;
+      }
+      alert(message);
     }
     // .map((element) => parseInt(element));
   }, 2000);
