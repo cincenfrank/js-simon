@@ -33,7 +33,7 @@ ${correctArray.toString()}`;
       alert(message);
     }
     // .map((element) => parseInt(element));
-  }, 2000);
+  }, 30000);
   console.log("Timer Started");
 }
 
