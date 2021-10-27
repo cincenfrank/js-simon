@@ -152,13 +152,15 @@ function onInputConfirmed(params) {
   }
   let scoreResult = checkScore(userNumbers, numbersList);
   let message = `You scored ${scoreResult.length}/${numbersList.length}`;
+  let scoreDetails;
   if (scoreResult.length > 0) {
-    message = `${message}
-  You remembered the following numbers:
-  ${scoreResult.toString()}`;
+    scoreDetails = `You remembered the following numbers: ${scoreResult.toString()}`;
   }
   // secondRow.innerHTML = "";
   thirdRow.innerHTML = `<h2 class="text-center">${message}</h2>`;
+  if (scoreDetails) {
+    thirdRow.innerHTML += `<p class="fs-3 text-center">${scoreDetails}</p>`;
+  }
 }
 
 function timeoutFunc(count) {
